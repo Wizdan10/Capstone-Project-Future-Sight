@@ -4,21 +4,30 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-class Login extends React.Component {
+class Register extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      name: "",
       email: "",
       password: "",
     };
 
-    this.onEmailChangeHandler = this.onEmailChangeHandler.bind(this);
-    this.onPasswordChangeHandler = this.onPasswordChangeHandler.bind(this);
+    this.onNameChange = this.onNameChange.bind(this);
+    this.onEmailChange = this.onEmailChange.bind(this);
+    this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
+  onNameChange(event) {
+    this.setState(() => {
+      return {
+        name: event.target.value,
+      };
+    });
+  }
 
-  onEmailChangeHandler(event) {
+  onEmailChange(event) {
     this.setState(() => {
       return {
         email: event.target.value,
@@ -26,7 +35,7 @@ class Login extends React.Component {
     });
   }
 
-  onPasswordChangeHandler(event) {
+  onPasswordChange(event) {
     this.setState(() => {
       return {
         password: event.target.value,
@@ -37,28 +46,38 @@ class Login extends React.Component {
   onSubmitHandler(event) {
     event.preventDefault();
 
-    this.props.login({
+    this.props.register({
+      name: this.state.name,
       email: this.state.email,
       password: this.state.password,
     });
   }
-
   render() {
     return (
       <React.Fragment>
         <Modal.Header closeButton>
-          <Modal.Title className="modalColor">Masuk</Modal.Title>
+          <Modal.Title className="modalColor">Daftar</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
+            <Form.Group className="mb-3">
+              <Form.Label className="modalColor">Name</Form.Label>
+              <Form.Control
+                type="text"
+                id="name"
+                value={this.state.name}
+                autoFocus
+                onChange={this.onNameChange}
+              />
+            </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label className="modalColor">Email</Form.Label>
               <Form.Control
                 type="email"
                 id="email"
-                value={this.state.email}
                 autoFocus
-                onChange={this.onEmailChangeHandler}
+                value={this.state.email}
+                onChange={this.onEmailChange}
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -67,21 +86,22 @@ class Login extends React.Component {
                 type="password"
                 id="password"
                 value={this.state.password}
-                onChange={this.onPasswordChangeHandler}
+                onChange={this.onPasswordChange}
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={this.onSubmitHandler}>
-            Masuk
+            Daftar
           </Button>
         </Modal.Footer>
       </React.Fragment>
     );
   }
 }
-Login.propTypes = {
-  login: PropTypes.func,
+
+Register.propTypes = {
+  register: PropTypes.func.isRequired,
 };
-export default Login;
+export default Register;
