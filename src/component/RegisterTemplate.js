@@ -13,7 +13,7 @@ function RegisterTemplate() {
   async function onRegisterHandler(user) {
     const { error } = await register(user);
     if (!error) {
-      alert("sukses");
+      alert("Register Berhasil");
     }
   }
   return (
