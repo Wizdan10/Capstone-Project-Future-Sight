@@ -35,7 +35,7 @@ function Notepage(){
     return(
         <>
             <SearchEngine keyword={keyword} keywordChange={onKeywordChangeHandler}/>
-            {notes.length !== 0 ? (<NoteListApp notes={filterNotes}/>):<NothingNote/>}
+            {filterNotes.length !== 0 ? (<NoteListApp notes={filterNotes}/>):<NothingNote/>}
             <AddButton/>
             </>
     )
