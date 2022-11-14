@@ -7,16 +7,15 @@ import Form from 'react-bootstrap/Form';
 
 function SearchEngine({keyword, keywordChange}){
     return(
-        <div className="search-engine mt-3">
+        <div className="search-engine mt-3 ">
         <Container>
-        <Row>
-        <Col md={{span: 3, offset: 10}}>
-        <Form className="d-flex">
+        <Row className="d-flex justify-content-end">
+        <Col md={{span: 3}}>
+        <Form>
               <Form.Control
                 type="search"
                 placeholder="Search"
                 value={keyword}
-                className="me-5 "
                 aria-label="Search"
                 onChange={(event)=>keywordChange(event.target.value)}
               />
