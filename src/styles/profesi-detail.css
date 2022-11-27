@@ -15,12 +15,16 @@
 }
 .education-type, .education-major, .salary-job{
     display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+.education-type p, .education-major p, .salary-job p{
+    margin: 0px;
+    margin-left: 20px;
 }
 .icon{
-    margin-left: 20px;
-    /* size: 20px; */
-    /* padding: 3px; */
-    /* background-color: aqua; */
+    margin: 0px;
 }
 .video{
     height: 315px;
