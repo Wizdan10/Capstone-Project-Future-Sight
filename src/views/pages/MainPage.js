@@ -6,6 +6,7 @@ import ProfresiShow from "./ProfesiShow";
 import NavbarMain from "../../components/Navbar";
 import NotFound404 from "./NotFoundPage";
 import DetailPageWraper from "./DetailPage";
+import FavoritePage from "./FavoritePage";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -66,6 +67,7 @@ class MainPage extends React.Component {
       <NavbarMain logout={this.onLogout} name={this.state.authedUser.name}/>
       <Routes>
         <Route path="/" element={<ProfresiShow/>}/>
+        <Route path="/favorite" element={<FavoritePage/>}/>
         <Route path="/profesi/:id" element={<DetailPageWraper />}/>
         <Route path={"*"} element={<NotFound404/>}/>       
       </Routes>

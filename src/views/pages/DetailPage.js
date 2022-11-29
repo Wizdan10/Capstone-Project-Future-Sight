@@ -2,8 +2,7 @@ import React from "react";
 // import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import DetailProfesi from "../../components/DetailProfesi";
-import { getProfesi, favoriteData } from "../../utils/dataset";
-import FavoriteProfDb from "../../data/favorite-prof-idb";
+import { getProfesi } from "../../utils/dataset";
 
 class DetailPageWraper extends React.Component{
 
@@ -14,10 +13,14 @@ class DetailPageWraper extends React.Component{
             data: getProfesi(props.id)            
         }
     }
+    
     render(){
+    
         return(
             <>
-            <DetailProfesi {...this.state.data} onFavorite={favoriteData} />
+            <DetailProfesi {...this.state.data}/>
+            <div className="likeContainer" id="likeContainer">
+            </div>
             </>
         )
     }
@@ -25,10 +28,7 @@ class DetailPageWraper extends React.Component{
 
 function DetailPageWrap(){
     const {id} = useParams()
-    const onFavoriteHandler = (id)=>{
-        FavoriteProfDb.putProf(id)
-    }
-    return <DetailPageWraper id= {id} onFavorite={onFavoriteHandler}/>
+    return <DetailPageWraper id= {id}/>
 }
 
 // tambahin propTypes disini

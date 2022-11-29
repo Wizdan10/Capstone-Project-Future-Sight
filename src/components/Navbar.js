@@ -19,7 +19,7 @@ function NavbarMain({logout, name}){
               style={{ maxHeight: '200px' }}
             >
                 <Link to={'/notes'} className='navbar-link navbar-text me-5'>My Note</Link>
-                <Link className='navbar-link navbar-text me-5'> Favorite</Link>
+                <Link to={'/favorite'} className='navbar-link navbar-text me-5'> Favorite</Link>
                 <Link className='navbar-link navbar-text me-5' to={'/'} onClick={logout}><FiLogOut/>{name}</Link>
             </Nav>
             

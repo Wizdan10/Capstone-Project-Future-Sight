@@ -116,16 +116,36 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f50c0c;
+  background-color: white;
+  
   
   position: fixed;
   bottom: 18px;
   right: 18px;
   border-radius: 50%;
-  border: 0;
+  border: 1px solid black;
   
   font-size: 28px;
-  color: white;
+  color: red;
+  cursor: pointer;
+}
+
+.unlike {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  border-radius: 50%;
+  border: 1px solid black;
+  
+  font-size: 28px;
+  color: rgb(255, 0, 0);
   cursor: pointer;
 }
 

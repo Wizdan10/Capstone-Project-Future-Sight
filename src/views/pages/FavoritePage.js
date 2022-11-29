@@ -1,16 +1,16 @@
 import React from "react";
 // import data from "../../utils/dataset"
 import ProfesiCardList from "../../components/ProfesiCardList";
-import { getAllProfesi } from "../../utils/dataset";
+import { favoriteData } from "../../utils/dataset";
 import SearchEngine from "../../components/SearchEngin";
 
-class ProfresiShow extends React.Component {
+class FavoritePage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       search: "",
-      datas: getAllProfesi(),
+      datas: [],
       isInitializationData: true,
     };
     this.onSearchHandler = this.onSearchHandler.bind(this);
@@ -18,8 +18,8 @@ class ProfresiShow extends React.Component {
 
   componentDidMount() {
     if (this.state.isInitializationData) {
-      const dataset = JSON.stringify(getAllProfesi());
-      localStorage.setItem("profesi-array", dataset);
+      const dataset = JSON.stringify(favoriteData());
+      localStorage.setItem("favorite-array", dataset);
       this.setState(() => {
         return {
           isInitializationData: false,
@@ -28,7 +28,7 @@ class ProfresiShow extends React.Component {
     }
     this.setState(() => {
       return {
-        datas: JSON.parse(localStorage.getItem("profesi-array")),
+        datas: JSON.parse(localStorage.getItem("favorite-array")),
       };
     });
   }
@@ -42,6 +42,7 @@ class ProfresiShow extends React.Component {
   };
 
   render() {
+    console.log(this.state.datas);
     const datas = this.state.datas.filter((data) =>
       data.job_title.toLowerCase().includes(this.state.search.toLowerCase())
     );
@@ -58,4 +59,4 @@ class ProfresiShow extends React.Component {
   }
 }
 
-export default ProfresiShow;
+export default FavoritePage;
