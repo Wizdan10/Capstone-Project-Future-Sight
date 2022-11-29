@@ -17,41 +17,59 @@ function DetailProfesi({
   youtube,
   education_major,
 }) {
-  const profesi = JSON.parse(localStorage.getItem("profesi-array")) || [];
-  const findProf = (profID) => {
-    for (const index in profesi) {
-      if (profesi[index].id === profID) return index;
-    }
-  };
+  //   const profesi = JSON.parse(localStorage.getItem("profesi-array")) || [];
+  //   const findProf = (profID) => {
+  //     for (const index in profesi) {
+  //       if (profesi[index].id === profID) return index;
+  //     }
+  //   };
 
-  const booleanProf = (profID) => {
-    const profTarget = findProf(profID);
-    if (profTarget == null) return;
-    profTarget.favorite = false;
-    localStorage.setItem("profesi-array", JSON.stringify(profesi));
-  };
+  //   const booleanProf = (profID) => {
+  //     const profTarget = findProf(profID);
+  //     if (profTarget == null) return;
+  //     profTarget.favorite = false;
+  //     localStorage.setItem("profesi-array", JSON.stringify(profesi));
+  //   };
 
-  const onFavoriteButtonHandler = (id, isFavorite) => {
-    const unFavoriteData = JSON.parse(localStorage.getItem("profesi-array"));
+  const onClickFavoriteButtonHandler = (id, isFavorite) => {
+    console.log(isFavorite);
+    const allData = JSON.parse(localStorage.getItem("profesi-array"));
     const favoriteData = JSON.parse(localStorage.getItem("favorite-array"));
+    const currentData = allData.filter((data) => data.id === id);
+    const fixData = currentData[0];
+
     if (!isFavorite) {
-      const currentData = unFavoriteData.filter((data) => data.id);
-      const finalUnFavoriteData = unFavoriteData.filter((data) => data.id !== id)
-      
-      localStorage.setItem("profesi-array", JSON.stringify(finalUnFavoriteData));
-      favoriteData.push(currentData);
+      if (!favoriteData.includes(fixData)) {
+        console.log(favoriteData.includes(fixData));
+        favoriteData.push({
+          ...fixData,
+          favorite: true,
+        });
+      }
+
+      allData.forEach((data) => {
+        if (data.id === id) {
+          data.favorite = true;
+        }
+      });
+
       localStorage.setItem("favorite-array", JSON.stringify(favoriteData));
+      localStorage.setItem("profesi-array", JSON.stringify(allData));
     } else {
-      const currentData = favoriteData.filter((data) => data.id);
-      const finalFavoriteData = favoriteData.filter((data) => data.id !== id)
-      
+      const finalFavoriteData = favoriteData.filter((data) => data.id !== id);
       localStorage.setItem("favorite-array", JSON.stringify(finalFavoriteData));
-      unFavoriteData.push(currentData);
-      localStorage.setItem("favorite-array", JSON.stringify(unFavoriteData));
+
+      allData.forEach((data) => {
+        if (data.id === id) {
+          data.favorite = false;
+        }
+      });
+
+      localStorage.setItem("profesi-array", JSON.stringify(allData));
     }
   };
 
-  const remove = (id) => {};
+  //   const remove = (id) => {};
 
   return (
     <div className="detail-profesi text-dark">
@@ -97,9 +115,9 @@ function DetailProfesi({
       </div>
       <div className="likeContainer">
         {favorite === false ? (
-          <UnlikeButton id={id} onFavorite={onFavoriteButtonHandler} />
+          <UnlikeButton id={id} onFavorite={onClickFavoriteButtonHandler} />
         ) : (
-          <LikeButton id={id} unFavorite={onFavoriteButtonHandler} />
+          <LikeButton id={id} unFavorite={onClickFavoriteButtonHandler} />
         )}
       </div>
     </div>

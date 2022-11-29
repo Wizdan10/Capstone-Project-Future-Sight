@@ -5,7 +5,7 @@ import React from "react";
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-function ProfesiItem({ id, job_title, imageProfesi }) {
+function ProfesiItem({ id, job_title, imageProfesi, onClickFavoriteButton }) {
   return (
     <div className="card-profesi">
       <div className="profesi">

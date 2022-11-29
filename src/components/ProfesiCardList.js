@@ -4,7 +4,7 @@ import ProfesiItem from "./ProfesiItem";
 import { Container } from "react-bootstrap";
 // import Row from 'react-bootstrap/Row';
 
-function ProfesiCardList ({ list })
+function ProfesiCardList ({ list, onClickFavoriteButton })
 {
         return(
         
@@ -15,6 +15,7 @@ function ProfesiCardList ({ list })
                         <ProfesiItem 
                             id={item.id}
                             key={item.id}
+                            onClickFavoriteButton={onClickFavoriteButton}
                             {...item}
                         />
                     ))
