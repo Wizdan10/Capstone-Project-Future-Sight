@@ -2,7 +2,12 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import { putAccessToken, getUserLogged } from "../../utils/network-data";
-import ProfresiShow from "../../components/ProfesiShow";
+import ProfresiShow from "./ProfesiShow";
+import NavbarMain from "../../components/Navbar";
+import NotFound404 from "./NotFoundPage";
+import DetailPageWraper from "./DetailPage";
+import FavoritePage from "./FavoritePage";
+import Notepage from "./NotePage";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -48,21 +53,28 @@ class MainPage extends React.Component {
   render() {
     if(this.state.initializing){
       return null
-  }
+    }
 
-  if(this.state.authedUser === null){
-    return (
+    if(this.state.authedUser === null){
+      return (
+        <Routes>
+          <Route path="/" element={<LoginPage loginSuccess={this.onLoginSuccess} />}/>
+        </Routes>
+      );
+    }
+
+    return(
+      <>
+      <NavbarMain logout={this.onLogout} name={this.state.authedUser.name}/>
       <Routes>
-        <Route path="/" element={<LoginPage loginSuccess={this.onLoginSuccess} />}/>
+        <Route path="/" element={<ProfresiShow/>}/>
+        <Route path="/notes" element={<Notepage/>}/>
+        <Route path="/favorite" element={<FavoritePage/>}/>
+        <Route path="/profesi/:id" element={<DetailPageWraper />}/>
+        <Route path={"*"} element={<NotFound404/>}/>       
       </Routes>
-    );
-  }
-
-  return(
-    <Routes>
-      <Route path="/" element={<ProfresiShow/>}/>
-    </Routes>
-  )
+      </>
+    )
   }
 }
 

@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+}
+
+/* === */
+.container{
+    margin-top: 50px;
+}
+.profesi-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    row-gap: 20px;
+}
+
+.profesi{
+    display: flex;
+    justify-content: center;
+    background-color: none;
+    /* margin: 50px; */
+
+}
+.image-profesi{
+    width: 70px;
+    height: 70px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    color: black;
+}
+.img-_{
+    background-size: cover;
+    background-repeat: none;
+    border: 1px solid black;
+    width: 100%;
+    height: 70px;
+    border-radius: 50%;
+    background-position: center;
+    align-items: center;
+}
+.title-job{
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    background-color: #D9D9D9;
+    color: black;
+    text-align: center;
+    align-items: center;
+    box-shadow: 8px 8px lightblue;
+    overflow: hidden;
+}
+
+.title-job a{
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 12px 0;
+}
+
+.title-job a:hover{
+    color: rgb(0, 119, 255);
+    text-decoration: underline;
+}
+
+.filter-button {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.button-flt {
+    margin: 5px;
+    padding: 10px;
+}
+
+.search-engine{
+    margin: 20px;
+}
+
+.favorite-title{
+    margin-top: 150px;
+}
+
+.to-top{
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    text-decoration: none;
+    pointer-events: none;
+    transition: all .4s;
+    opacity: 0;
+}
+  
+  .to-top.active{
+    right: 16px;
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+@media (min-width: 320px) and (max-width: 767px){
+    ::-webkit-scrollbar{width:2px;height:2px;}
+    ::-webkit-scrollbar-button{width:2px;height:2px;}
+    .profesi-list{
+        grid-template-columns: repeat(1, 1fr) ;
+    }
+    .filter-button {
+        margin-top: 150px;
+        display: block;
+        justify-content: center;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (min-width: 768px) {
+    .profesi-list{
+        grid-template-columns: repeat(2, 1fr) ;
+    }
+}
+@media (min-width: 1024px) {
+    .profesi-list{
+        grid-template-columns: repeat(3, 1fr) ;
+    }
+}

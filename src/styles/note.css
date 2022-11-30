@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.app-container{
+    min-height: 100vh;
+}
+
+.note-item__body{
+    margin-top: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.note-item__title{
+    padding: 10px 0;
+    margin-top: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.homepage__action{
+    position: fixed;
+    display: flex;
+    gap: 16px;
+    bottom: 32px;
+    right: 32px;
+}
+
+.navbar-link{
+    text-decoration: none;
+}
+
+.navbar-link:hover{
+    text-decoration: underline;
+}
+.action{
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+.add-button{
+    font-size: 100;
+}
+
+.not-found{
+    margin-top: 250px;
+}
+
+.card-title a{
+    text-decoration: none;
+    color: white;
+}
+
+.card-title a:hover{
+    color: rgb(0, 204, 255);
+    text-decoration: underline;
+}
+
+.note-item__delete-button{
+    padding: 10px;
+}
+
+.note-title{
+    margin-top: 150px;
+}
