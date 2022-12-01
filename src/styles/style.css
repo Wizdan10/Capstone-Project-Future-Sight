@@ -118,7 +118,7 @@ html {
   align-items: center;
   justify-content: center;
   background-color: white;
-  z-index: 0;
+  z-index: 1;
   
   
   position: fixed;
@@ -139,7 +139,7 @@ html {
   align-items: center;
   justify-content: center;
   background-color: white;
-  z-index: 0;
+  z-index: 1;
   
   position: fixed;
   bottom: 18px;
