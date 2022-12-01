@@ -15,6 +15,7 @@ class InputNotes extends React.Component{
         this.onBodyChangeEventHandler = this.onBodyChangeEventHandler.bind(this)
         this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this)
     }
+    
 
     onTitleChangeEventhandler=(event)=>{
         this.setState(()=>{
@@ -31,7 +32,7 @@ class InputNotes extends React.Component{
             }
         })
     }
-
+    
     onSubmitEventHandler = (event) =>{
         event.preventDefault();
         this.props.addNote(this.state)
