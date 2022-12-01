@@ -5,6 +5,8 @@ import ProfesiCardList from "../../components/ProfesiCardList";
 import SearchEngine from "../../components/SearchEngin";
 import NothingFavorite from "./NothingFavorite";
 import ScrollToTop from "react-scroll-to-top";
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
+import FooterDown from "../../components/FotterDown";
 
 class FavoritePage extends React.Component {
   constructor(props) {
@@ -65,7 +67,14 @@ class FavoritePage extends React.Component {
 
     return (
       <>
-      <ScrollToTop smooth color="#6f00ff" />
+      <div className="profesi-show">
+      <ScrollToTop
+          smooth
+          width="40px"
+          height="40px"
+          component={<BsFillArrowUpSquareFill />}
+        />
+      </div>
         <Container>
         <div className="favorite-title">
         <h2 className="text-dark d-flex justify-content-center mt-3">Your Favorites</h2>
@@ -76,6 +85,7 @@ class FavoritePage extends React.Component {
         />
         </Container>
         {datas.length !== 0 ?<ProfesiCardList list={datas} />:<NothingFavorite/>}
+        <FooterDown/>
       </>
     );
   }

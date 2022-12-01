@@ -5,6 +5,8 @@ import { getAllProfesi, btn } from "../../utils/dataset";
 import SearchEngine from "../../components/SearchEngin";
 import FilterButton from "../../components/FilterButton";
 import ScrollToTop from "react-scroll-to-top";
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
+import FooterDown from "../../components/FotterDown";
 
 class ProfresiShow extends React.Component {
   constructor(props) {
@@ -67,15 +69,23 @@ class ProfresiShow extends React.Component {
     );
 
     return (
-      <div className="">
-        <ScrollToTop smooth color="#6f00ff" top={100}/>
+      <>
+      <div className="profesi-show">
+          <ScrollToTop
+          smooth
+          width="40px"
+          height="40px"
+          component={<BsFillArrowUpSquareFill />}
+        />
+        </div>
         <FilterButton onFilteringBtns={this.onFilteringBtns} btns={this.state.btns}/>
         <SearchEngine
           keyword={this.state.search}
           keywordChange={this.onSearchHandler}
         />
         <ProfesiCardList list={datas} />
-      </div>
+        <FooterDown/>
+        </>
     );
   }
 }

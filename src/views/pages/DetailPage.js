@@ -22,6 +22,9 @@ class DetailPageWraper extends React.Component {
     return (
       <>
         <DetailProfesi {...this.state.data} />
+        <div className="copy-right text-dark border-top">
+          <p> Create by <strong>FUTURE SIGHT</strong> 2022&copy;</p>
+        </div>
       </>
     );
   }

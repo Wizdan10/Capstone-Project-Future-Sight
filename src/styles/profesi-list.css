@@ -81,30 +81,71 @@
     margin-top: 150px;
 }
 
-.to-top{
-    position: fixed;
-    bottom: 16px;
+.profesi-show .scroll-to-top{
+    width: 44px;
+    height: 44px;
+    border-radius: 45%;
+    background: none;
     right: 16px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 45px;
-    text-decoration: none;
-    pointer-events: none;
-    transition: all .4s;
-    opacity: 0;
-}
-  
-  .to-top.active{
-    right: 16px;
-    bottom: 32px;
-    pointer-events: auto;
-    opacity: 1;
+    bottom: 24px;
 }
 
-@media (min-width: 320px) and (max-width: 767px){
+.note-show .scroll-to-top{
+    width: 44px;
+    height: 44px;
+    border-radius: 45%;
+    background: none;
+    right: 16px;
+    bottom: 24px;
+    font-weight: bolder;
+}
+
+.scroll-to-top svg{
+    height: 44px;
+    width: 44px;
+    color: #F637EC;
+    background-color: white;
+    border-radius: 20%;
+}
+
+.fotter-container{
+    margin-top: 80px;
+}
+
+.fotter-content{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    z-index: 2;
+}
+
+.copy-right {
+    position: sticky;
+}
+
+.copy-right p {
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.colom-1 h6, .colom-2 h6{
+    font-weight: bold;
+}
+
+.list-unstyled a{
+    text-decoration: none;
+    color: black;
+    font-weight: 450;
+}
+
+.list-unstyled a:hover{
+    text-decoration: underline;
+    color: #0096FF;
+}
+
+@media (min-width: 320px) and (max-width: 727px){
     ::-webkit-scrollbar{width:2px;height:2px;}
     ::-webkit-scrollbar-button{width:2px;height:2px;}
     .profesi-list{
@@ -119,15 +160,70 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
     }
+    .fotter-content{
+        display: flex;
+        flex-direction: column;
+        padding: 2px 6px;
+    }
+    .colom-1 p,h6, .colom-2 ul li{
+        text-align: center;
+        font-size: 12px;
+    }
+    .colom-1, .colom-2{
+        width: 100%;
+    }
+    .copy-right{
+        font-size: 12px;
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 728px) {
     .profesi-list{
         grid-template-columns: repeat(2, 1fr) ;
+    }
+    .fotter-content{
+        display: flex;
+        flex-direction: row;
+        padding: 2px 6px;
+    }
+    .colom-1 p,h6, .colom-2 ul li{
+        text-align: justify;
+        font-size: 18px;
+    }
+    .colom-1 {
+        width: 70%;
+        padding-left: 40px;
+    }
+    .colom-2{
+        width: 30% ;
+        padding-left: 40px;
+    }
+    .copy-right{
+        font-size: 14px;
     }
 }
 @media (min-width: 1024px) {
     .profesi-list{
         grid-template-columns: repeat(3, 1fr) ;
+    }
+    .fotter-content{
+        display: flex;
+        flex-direction: row;
+        padding: 2px 6px;
+    }
+    .colom-1 p,h6, .colom-2 ul li{
+        text-align: justify;
+        font-size: 20px;
+    }
+    .colom-1 {
+        width: 70%;
+        padding-left: 60px;
+    }
+    .colom-2{
+        width: 30% ;
+        padding-left: 60px;
+    }
+    .copy-right{
+        font-size: 16px;
     }
 }

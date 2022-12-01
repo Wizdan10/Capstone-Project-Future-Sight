@@ -32,25 +32,34 @@
 }
 .video-content{
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-@media (min-width: 310px) or (max-width:510){
-    .profesi-list{
-        grid-template-columns: repeat(1, 1fr) ;
-    }
+
+@media (min-width: 310px){
     .video{
         height: 215px;
         width: 380px;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 520px){
+    .video{
+        height: 260px;
+        width: 510px;
+    }
+}
+
+@media (min-width: 728px) {
     .profesi-list{
         grid-template-columns: repeat(2, 1fr) ;
     }
     .video{
         height: 350px;
         width: 660px;
+    }
+    .video-content{
+        margin-bottom: 40px;
     }
 }
 @media (min-width: 1024px) {
@@ -60,5 +69,8 @@
     .video{
         height: 450px;
         width: 760px;
+    }
+    .video-content{
+        margin-bottom: 60px;
     }
 }
