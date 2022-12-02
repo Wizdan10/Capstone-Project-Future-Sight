@@ -84,7 +84,7 @@ class FavoritePage extends React.Component {
           keywordChange={this.onSearchHandler}
         />
         </Container>
-        {datas.length !== 0 ?<ProfesiCardList list={datas} />:<NothingFavorite/>}
+        <div className="fav-container">{datas.length !== 0 ?<ProfesiCardList list={datas} />:<NothingFavorite/>}</div>
         <FooterDown/>
       </>
     );

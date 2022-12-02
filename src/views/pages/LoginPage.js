@@ -23,7 +23,7 @@ function LoginPage({loginSuccess}) {
         </div>
       </div>
       </div>
-      <img src={ImageMain} width={500} alt="MainPage" className="imgMain" />
+      <img src={ImageMain} alt="MainPage" className="imgMain" />
     </React.Fragment>
   );
 }

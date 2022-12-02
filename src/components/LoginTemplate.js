@@ -13,7 +13,6 @@ function LoginTemplate({ loginSuccess }) {
   async function onLoginHandler({ email, password }) {
     const { error, data } = await login({ email, password });
     if (!error) {
-      alert('Berhasil')
       loginSuccess(data);
     }
   }

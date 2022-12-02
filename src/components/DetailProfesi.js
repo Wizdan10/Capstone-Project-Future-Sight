@@ -18,6 +18,19 @@ function DetailProfesi({
   youtube,
   education_major,
 }) {
+  //   const profesi = JSON.parse(localStorage.getItem("profesi-array")) || [];
+  //   const findProf = (profID) => {
+  //     for (const index in profesi) {
+  //       if (profesi[index].id === profID) return index;
+  //     }
+  //   };
+
+  //   const booleanProf = (profID) => {
+  //     const profTarget = findProf(profID);
+  //     if (profTarget == null) return;
+  //     profTarget.favorite = false;
+  //     localStorage.setItem("profesi-array", JSON.stringify(profesi));
+  //   };
   const navigate = useNavigate();
   const onClickFavoriteButtonHandler = (id, isFavorite) => {
     const allData = JSON.parse(localStorage.getItem("profesi-array"));
@@ -27,6 +40,7 @@ function DetailProfesi({
    
     if (!isFavorite) {
       if (!favoriteData.includes(fixData)) {
+        console.log(favoriteData.includes(fixData));
         favoriteData.push({
           ...fixData,
           favorite: true,

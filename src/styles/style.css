@@ -239,7 +239,7 @@ html {
 }
 
 
-@media (min-width: 20px) and (max-width: 1200px) {
+@media (min-width: 200px) and (max-width: 413px) {
   .imgMain {
     display: none;
   }

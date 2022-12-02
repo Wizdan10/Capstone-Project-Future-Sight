@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 function NoteListApp({notes}){
     return(
         <Container >
-            <Row className="justify-content-center">
+            <Row className="justify-content-center note-card">
             {
                 notes.map((note)=>(
                     <NoteItem 

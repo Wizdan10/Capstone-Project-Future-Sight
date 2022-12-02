@@ -110,9 +110,11 @@
 }
 
 .fotter-container{
-    margin-top: 80px;
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
     position: relative;
-    bottom: 0;
+    bottom: 0px;
 }
 
 .fotter-content{
@@ -120,11 +122,11 @@
     display: flex;
     flex-direction: row;
     padding: 10px 20px;
-    z-index: 2;
 }
 
-.copy-right {
-    bottom: 0;
+.not-found{
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 .copy-right p {
@@ -148,6 +150,7 @@
     color: #0096FF;
 }
 
+
 @media (min-width: 320px) and (max-width: 727px){
     ::-webkit-scrollbar{width:2px;height:2px;}
     ::-webkit-scrollbar-button{width:2px;height:2px;}
@@ -163,6 +166,7 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
     }
+
     .fotter-content{
         display: flex;
         flex-direction: column;
@@ -177,6 +181,10 @@
     }
     .copy-right{
         font-size: 12px;
+    }
+    .fav-container {
+        margin-top: 100px;
+        margin-bottom: 140px;
     }
 }
 
@@ -205,7 +213,7 @@
         font-size: 14px;
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1224px) {
     .profesi-list{
         grid-template-columns: repeat(3, 1fr) ;
     }
@@ -228,5 +236,21 @@
     }
     .copy-right{
         font-size: 16px;
+    }
+}
+
+@media (min-width: 1700px) {
+    .not-found {
+        margin: 220px 0;
+    }
+    .profesi-list{
+        margin: 150px 0;
+    }
+    .note-card{
+        margin: 100px 0;
+    }
+    .fav-container {
+        margin-top: 200px;
+        margin-bottom: 240px;
     }
 }

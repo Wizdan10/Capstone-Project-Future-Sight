@@ -7,7 +7,7 @@ function FooterDown(){
                     <div className="colom-1">
                         <h6>About us</h6>
                             <p>
-                            Kami membangun website ini dengan harapan dapat menjadi acuan bagi pengunjung yang masih kebingungan dengan masa depan mereka. Sebagai wadah informasi untuk kaum millennial dalam membantu menentukan pilihan karir dengan harapan dapat menjadi pribadi yang produktif dan berkembang pada masa mendatang.
+                            Website ini dibangun dengan harapan menjadi acuan bagi pengunjung yang masih kebingungan dengan masa depan mereka. Sebagai wadah informasi untuk kaum millennial dalam membantu menentukan pilihan karir dengan harapan dapat menjadi pribadi yang produktif dan berkembang pada masa mendatang.
                             </p>
                     </div>
                     <div className="colom-2">
