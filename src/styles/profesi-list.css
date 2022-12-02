@@ -110,6 +110,8 @@
 
 .fotter-container{
     margin-top: 80px;
+    position: absolute;
+    bottom: 0;
 }
 
 .fotter-content{
@@ -120,9 +122,6 @@
     z-index: 2;
 }
 
-.copy-right {
-    position: sticky;
-}
 
 .copy-right p {
     text-align: center;
