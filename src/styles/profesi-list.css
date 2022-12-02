@@ -5,6 +5,7 @@
 /* === */
 .container{
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 .profesi-list{
     display: grid;
