@@ -110,7 +110,7 @@
 
 .fotter-container{
     margin-top: 80px;
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
@@ -122,11 +122,14 @@
     z-index: 2;
 }
 
+.copy-right {
+    bottom: 0;
+}
 
 .copy-right p {
     text-align: center;
-    justify-content: center;
     padding: 10px;
+    bottom: 0;
 }
 
 .colom-1 h6, .colom-2 h6{
