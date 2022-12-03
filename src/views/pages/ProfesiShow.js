@@ -50,7 +50,6 @@ class ProfresiShow extends React.Component {
   
   onFilteringBtns = (e)=>{
     let filtered;
-    console.log(e.target.value)
     if(e.target.value === "All"){
         filtered = this.state.datas;
     }
